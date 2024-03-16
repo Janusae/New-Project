@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "Index/03.css" %}">
+    <script src="{% static "04.js" %}"></script>
+</head>
+<body>
+<section class="content">
+  <article class="demo-area">
+  <img class="demo-trigger" src="{{ data.image.url }}" data-zoom="https://demos.imgix.net/wristwatch.jpg?w=1000&ch=DPR&dpr=2">
+  <div class="detail">
+   <section>
+      <h3>{{ data.title }}</h3>
+      <h4>$ {{ data.price }} <button>Buy</button></h4>
+    </section>
+  </div>
+  </article>
+</section>
+<section class="content">
+  <article>
+     <h1>Description:</h1>
+      <p>{{ data.description }}</p>
+     <div class="button-group">
+       <a href="https://github.com/imgix/luminous" class="button" target="_blank">View on github</a>
+       <a href="https://imgix.com" target="_blank" class="button">Visit imgix.com</a>
+    </div>
+  </article>
+</section>
+<footer>
+  <hr>
+</footer>
+<br>
+<div id="main">
+	<div id="comments-thread">
+		<section>
+			<ol class="commets-list">
+
+<br>
+<br>
+{% for c in comments %}
+					<li class="comment byuser comment-author-hidekichi bypostauthor even thread-even depth-1" id="li-comment-8">
+					<div id="comment-8">
+						<div class="comment-listCon">
+							<div class="comment-info">
+
+								<span class="admin">User : <cite class="fn comment-author">{{ c.auther }}</cite></span> <span class="comment-datetime">Send a comment in  ：{{ c.date }}</span>
+								<span class="comment-reply">
+              <a rel="nofollow" class="comment-reply-link" href="https://test-wordpress-hidekichi.c9users.io/hello-world?replytocom=8#respond" onclick="return addComment.moveForm( &quot;comment-8&quot;, &quot;8&quot;, &quot;respond&quot;, &quot;1&quot; )" aria-label="Hidekichi に返信"></a>            </span>
+
+							</div>
+							<div class="comment-text"></div>
+							<p>{{ c.text }}</p>
+
+						</div>
+					</div>
+				</li>
+{% endfor %}
+
+            
+			</ol>
+
+			<div class="comment-page-link">
+
+		</section>
+		<aside>
+
+			<!-- #respond -->
+		</aside>
+	</div>
+</div>
+<br>
+
+
+</form>
+</body>
+</html>

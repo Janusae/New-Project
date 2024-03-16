@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<H1>Create your account!</H1>
+<form action="" method="post">
+{% csrf_token %}
+    {% for d in data %}
+    	{{ d.label_tag }}
+    	{{ d }}
+        <br>
+        <br>
+    {% endfor %}
+    <button type="submit"> Send </button>
+</form>
+</body>
+</html>

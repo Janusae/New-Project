@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static "Index/02.css" %}">
+</head>
+<body>
+
+<div class="container columns">
+{% for d in data %}
+	<div class="product-item"><img src="{{ d.image.url }}"><div class="product-list"><h3>{{ d.title }}</h3><span class="price">💲 {{ d.price }}</span><a href="{{ d.id }}" class="button">{{ d.name }}</a></div></div>
+
+{% endfor %}
+
+</div>
+
+
+ </body>
+</html>
